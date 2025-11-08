@@ -28,7 +28,7 @@ After authentication, users land on a **visually clean dashboard** with:
 
 🖼️ **Example — Dashboard**
 
-![Dashboard Screenshot](<img width="1917" height="907" alt="Screenshot 2025-11-08 172847" src="https://github.com/user-attachments/assets/413ba85c-45b4-4f12-8022-9fa23d8dc3b1" />)
+![Dashboard Screenshot](<img width="1917" height="907" alt="Screenshot 2025-11-08 172847" src="https://github.com/user-attachments/assets/3824edf3-f120-4ad4-9dfc-adde331a17af" />)
 
 > Displays bookmarks such as:
 > - *Ikigai* → A book summary link  
