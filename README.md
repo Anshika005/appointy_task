@@ -28,7 +28,8 @@ After authentication, users land on a **visually clean dashboard** with:
 
 🖼️ **Example — Dashboard**
 
-![Dashboard Screenshot](<C:\Users\91700\Desktop\appointy_task\Screenshot 2025-11-08 172847.png>)
+![Dashboard Screenshot](<img width="1917" height="907" alt="Screenshot 2025-11-08 172847" src="https://github.com/user-attachments/assets/413ba85c-45b4-4f12-8022-9fa23d8dc3b1" />
+72847.png>)
 
 > Displays bookmarks such as:
 > - *Ikigai* → A book summary link  
@@ -47,7 +48,8 @@ Bookmarks are displayed instantly on the dashboard with **beautiful preview card
 
 🖼️ **Example — Add/Edit Bookmark Modal**
 
-![Add Bookmark Screenshot](<C:\Users\91700\Desktop\appointy_task\Screenshot 2025-11-08 173128.pngYOUR_ADD_BOOKMARK_IMAGE_URI>)
+![Add Bookmark Screenshot](<img width="1915" height="909" alt="Screenshot 2025-11-08 173128" src="https://github.com/user-attachments/assets/42d95aab-3670-42dc-bbde-68984b0389ed" />
+ot 2025-11-08 173128.pngYOUR_ADD_BOOKMARK_IMAGE_URI>)
 
 ---
 
@@ -72,7 +74,7 @@ Gemini interprets this prompt and returns a contextual JSON response, which is t
 
 🖼️ **Example — AI Search Modal**
 
-![AI Search Screenshot](<YOUR_AI_SEARCH_IMAGE_C:\Users\91700\Desktop\appointy_task\Screenshot 2025-11-08 173153.pngURI>)
+![AI Search Screenshot](<img width="1919" height="906" alt="Screenshot 2025-11-08 173153" src="https://github.com/user-attachments/assets/3fd26541-95ee-488b-99f7-663361bb5a1e" />
 
 ---
 
