@@ -196,5 +196,3 @@ Planned enhancements include:
 **Anshika Mishra** 
 
 > “Turning your scattered tabs into your visual memory of the web.”
-
-```
