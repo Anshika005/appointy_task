@@ -73,7 +73,7 @@ Gemini interprets this prompt and returns a contextual JSON response, which is t
 
 🖼️ **Example — AI Search Modal**
 
-![AI Search Screenshot](<img width="1919" height="906" alt="Screenshot 2025-11-08 173153" src="https://github.com/user-attachments/assets/3fd26541-95ee-488b-99f7-663361bb5a1e" />)
+![AI Search Screenshot](https://github.com/user-attachments/assets/3fd26541-95ee-488b-99f7-663361bb5a1e)
 
 ---
 
