@@ -185,4 +185,3 @@ Then open [http://localhost:3000](http://localhost:3000)
 > “Turning your scattered tabs into your visual memory of the web.”
 
 ```
-
