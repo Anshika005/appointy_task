@@ -176,26 +176,13 @@ Then open [http://localhost:3000](http://localhost:3000)
 
 ---
 
-## 📘 License
 
-MIT License
-
----
 
 ## 👩‍💻 Author
 
-**Anshika M.** — Developer of *Synapse*
+**Anshika Mishra** — Developer of *Synapse*
 
 > “Turning your scattered tabs into your visual memory of the web.”
 
 ```
 
----
-
-✅ **Instructions for you:**
-1. Copy and paste the above content directly into your VS Code file as `README.md`.  
-2. Replace each `<YOUR_IMAGE_URI>` with the **image link** you get after converting your screenshots using an image-to-URI converter (like [https://imgur.com/](https://imgur.com/) or GitHub’s drag-and-drop feature).  
-3. Commit and push — it’ll render beautifully on GitHub.
-
-Would you like me to make a **README preview version** (with your current image filenames inserted and ready to convert) so you can just replace the links later?
-```
