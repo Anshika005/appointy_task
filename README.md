@@ -175,18 +175,6 @@ Then open [http://localhost:3000](http://localhost:3000)
 
 ---
 
-## 📷 Screenshots
-
-| Page                | Description                                    | Example                                  |
-| ------------------- | ---------------------------------------------- | ---------------------------------------- |
-| **Login Page**      | Elegant login/signup form                      | ![Login](<img width="1919" height="909" alt="Screenshot 2025-11-08 172825" src="https://github.com/user-attachments/assets/21654f0d-6fc5-4955-87fc-d36ca89851a4" />
-)           |
-| **Dashboard**       | Card-based layout                              | ![Dashboard](<img width="1917" height="907" alt="Screenshot 2025-11-08 172847" src="https://github.com/user-attachments/assets/064945be-a9ad-4abe-ac4c-6df7828784a1" />)   |
-| **Add/Edit Modal**  | Add or modify bookmarks easily                 | ![Add/Edit](<img width="1915" height="909" alt="Screenshot 2025-11-08 173128" src="https://github.com/user-attachments/assets/85caf228-fb34-4788-bd88-c75ec427e38f" />) |
-| **AI Search Popup** | Conversational, intelligent bookmark retrieval | ![AI Search](<img width="1919" height="906" alt="Screenshot 2025-11-08 173153" src="https://github.com/user-attachments/assets/47a003dd-575c-4f60-8663-4a6cfe59990a" />)   |
-
----
-
 ## 📘 License
 
 MIT License
