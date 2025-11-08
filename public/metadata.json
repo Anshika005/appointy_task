@@ -1,0 +1,16 @@
+{
+  "name": "Synapse",
+  "short_name": "Synapse",
+  "description": "Your visual memory of the web - Save, organize, and search your bookmarks with AI assistance",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#5835f4",
+  "icons": [
+    {
+      "src": "/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ]
+}

@@ -1,55 +1,35 @@
 "use client"
 
-import { useState } from "react"
-import LoginPage from "@/components/login-page"
-import DashboardPage from "@/components/dashboard-page"
-
-interface KnowledgeItem {
-  id: string
-  title: string
-  category: string
-  description: string
-  image?: string
-  tags: string[]
-  date: string
-  color: string
-  size: string
-}
+import { useEffect } from "react"
+import { useAuth } from "@/lib/auth-context"
+import { useRouter } from "next/navigation"
+import { AuthForm } from "@/components/auth-form"
 
 export default function Home() {
-  const [isLoggedIn, setIsLoggedIn] = useState(false)
-  const [userItems, setUserItems] = useState<KnowledgeItem[]>([])
+  const { user, loading } = useAuth()
+  const router = useRouter()
 
-  const handleLogin = () => {
-    setIsLoggedIn(true)
-  }
-
-  const handleLogout = () => {
-    setIsLoggedIn(false)
-    setUserItems([])
-  }
-
-  const handleAddItem = (newItem: Omit<KnowledgeItem, "id" | "date">) => {
-    const item: KnowledgeItem = {
-      ...newItem,
-      id: Date.now().toString(),
-      date: new Date().toISOString().split("T")[0],
+  useEffect(() => {
+    if (!loading && user) {
+      router.push("/dashboard")
     }
-    setUserItems([item, ...userItems])
+  }, [user, loading, router])
+
+  if (loading) {
+    return (
+      <div className="flex items-center justify-center min-h-screen">
+        <div className="animate-pulse text-lg text-muted-foreground">Loading...</div>
+      </div>
+    )
   }
 
-  const handleDeleteItem = (id: string) => {
-    setUserItems(userItems.filter((item) => item.id !== id))
-  }
-
-  return isLoggedIn ? (
-    <DashboardPage
-      onLogout={handleLogout}
-      userItems={userItems}
-      onAddItem={handleAddItem}
-      onDeleteItem={handleDeleteItem}
-    />
-  ) : (
-    <LoginPage onLogin={handleLogin} />
+  return (
+    <main className="min-h-screen flex items-center justify-center bg-linear-to-br from-primary/5 via-background to-accent/5 p-4">
+      <div className="text-center mb-8 absolute top-8">
+        <h1 className="text-4xl font-bold mb-2">Synapse</h1>
+        <p className="text-muted-foreground">Your visual memory of the web</p>
+      </div>
+      <AuthForm />
+    </main>
   )
 }

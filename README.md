@@ -1,36 +1,122 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Synapse - Your Visual Memory of the Web
 
-## Getting Started
+Synapse is a modern, AI-powered bookmark management application that helps you capture, organize, and rediscover your internet discoveries. Built with Next.js, MongoDB, and Claude AI.
 
-First, run the development server:
+## Features
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+✨ **Beautiful Card-Based UI**
+- Visually stunning bookmark cards with images and metadata
+- Responsive design that works on all devices
+- Smooth animations and interactions
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+🔐 **Secure Authentication**
+- JWT-based authentication system
+- Secure password hashing with bcryptjs
+- Session token storage in localStorage
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+🎯 **Smart Bookmark Management**
+- Add bookmarks with URLs, titles, descriptions, and images
+- Categorize as articles, products, videos, todos, research, or inspiration
+- Edit and delete bookmarks anytime
+- Rich metadata preservation
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+🤖 **AI-Powered Features**
+- **Natural Language Search**: Ask questions to find bookmarks
+- **AI Summaries**: Generate summaries of saved content
+- Powered by Claude 3.5 Sonnet
 
-## Learn More
+🔍 **Quick Search**
+- Instant keyword search across all bookmarks
+- Search by title, description, or URL
 
-To learn more about Next.js, take a look at the following resources:
+## Tech Stack
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- **Frontend**: React 19 + Next.js 16 (App Router)
+- **Backend**: Next.js Route Handlers
+- **Database**: MongoDB
+- **Authentication**: JWT + bcryptjs
+- **AI**: Anthropic Claude API
+- **Styling**: Tailwind CSS v4
+- **Icons**: Lucide React
+- **UI Components**: shadcn/ui
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Quick Start
 
-## Deploy on Vercel
+1. **Clone and install**
+   \`\`\`bash
+   npm install
+   \`\`\`
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+2. **Set up environment variables** (see SETUP_GUIDE.md)
+   \`\`\`bash
+   cp .env.example .env.local
+   # Edit .env.local with your credentials
+   \`\`\`
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+3. **Run development server**
+   \`\`\`bash
+   npm run dev
+   \`\`\`
+
+4. **Open browser**
+   \`\`\`
+   http://localhost:3000
+   \`\`\`
+
+## Documentation
+
+- [Setup Guide](./SETUP_GUIDE.md) - Detailed setup instructions
+- [API Reference](#api-endpoints) - API endpoint documentation
+
+## Screenshots
+
+### Login Page
+Beautiful, minimal login/signup interface
+
+### Dashboard
+Card-based bookmark grid with quick actions, search, and AI features
+
+### Add Bookmark Modal
+Easy bookmark creation with all metadata fields
+
+### AI Search
+Natural language search powered by Claude
+
+## API Endpoints
+
+### Auth
+- `POST /api/auth/register` - Create account
+- `POST /api/auth/login` - Login
+
+### Bookmarks (require auth)
+- `GET /api/bookmarks` - List all bookmarks
+- `POST /api/bookmarks` - Create bookmark
+- `PATCH /api/bookmarks/[id]` - Update bookmark
+- `DELETE /api/bookmarks/[id]` - Delete bookmark
+
+### AI
+- `POST /api/ai/search` - AI search (requires auth)
+- `POST /api/ai/summarize` - Generate summary
+
+## Environment Variables
+
+\`\`\`env
+MONGODB_URI=mongodb+srv://...
+JWT_SECRET=your-secret-key
+ANTHROPIC_API_KEY=sk-ant-...
+NEXT_PUBLIC_API_URL=http://localhost:3000
+\`\`\`
+
+See `.env.example` for details.
+
+## License
+
+MIT
+
+## Author
+
+Created with v0
+
+---
+
+**Synapse**: Because every bookmark is a memory worth keeping.
