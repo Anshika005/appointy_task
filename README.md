@@ -48,7 +48,7 @@ Bookmarks are displayed instantly on the dashboard with **beautiful preview card
 
 🖼️ **Example — Add/Edit Bookmark Modal**
 
-![Add Bookmark Screenshot](<img width="1915" height="909" alt="Screenshot 2025-11-08 173128" src="https://github.com/user-attachments/assets/42d95aab-3670-42dc-bbde-68984b0389ed" />)
+![Add Bookmark Screenshot](https://github.com/user-attachments/assets/42d95aab-3670-42dc-bbde-68984b0389ed)
 
 ---
 
@@ -170,7 +170,7 @@ Then open [http://localhost:3000](http://localhost:3000)
 
 🖼️ **Example — Login Page**
 
-![Login Screenshot](<img width="1919" height="909" alt="Screenshot 2025-11-08 172825" src="https://github.com/user-attachments/assets/8ab5a2d6-98e2-4673-b50f-3fbe05fe3b36" />)
+![Login Screenshot](https://github.com/user-attachments/assets/8ab5a2d6-98e2-4673-b50f-3fbe05fe3b36)
 
 
 ---
