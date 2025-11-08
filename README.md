@@ -1,122 +1,209 @@
-# Synapse - Your Visual Memory of the Web
+# 🧠 Synapse — Your Visual Memory of the Web
 
-Synapse is a modern, AI-powered bookmark management application that helps you capture, organize, and rediscover your internet discoveries. Built with Next.js, MongoDB, and Claude AI.
+Synapse is a modern, AI-powered bookmark management application designed to help you **capture, organize, and rediscover your digital world** — beautifully and intelligently.
 
-## Features
-
-✨ **Beautiful Card-Based UI**
-- Visually stunning bookmark cards with images and metadata
-- Responsive design that works on all devices
-- Smooth animations and interactions
-
-🔐 **Secure Authentication**
-- JWT-based authentication system
-- Secure password hashing with bcryptjs
-- Session token storage in localStorage
-
-🎯 **Smart Bookmark Management**
-- Add bookmarks with URLs, titles, descriptions, and images
-- Categorize as articles, products, videos, todos, research, or inspiration
-- Edit and delete bookmarks anytime
-- Rich metadata preservation
-
-🤖 **AI-Powered Features**
-- **Natural Language Search**: Ask questions to find bookmarks
-- **AI Summaries**: Generate summaries of saved content
-- Powered by Claude 3.5 Sonnet
-
-🔍 **Quick Search**
-- Instant keyword search across all bookmarks
-- Search by title, description, or URL
-
-## Tech Stack
-
-- **Frontend**: React 19 + Next.js 16 (App Router)
-- **Backend**: Next.js Route Handlers
-- **Database**: MongoDB
-- **Authentication**: JWT + bcryptjs
-- **AI**: Anthropic Claude API
-- **Styling**: Tailwind CSS v4
-- **Icons**: Lucide React
-- **UI Components**: shadcn/ui
-
-## Quick Start
-
-1. **Clone and install**
-   \`\`\`bash
-   npm install
-   \`\`\`
-
-2. **Set up environment variables** (see SETUP_GUIDE.md)
-   \`\`\`bash
-   cp .env.example .env.local
-   # Edit .env.local with your credentials
-   \`\`\`
-
-3. **Run development server**
-   \`\`\`bash
-   npm run dev
-   \`\`\`
-
-4. **Open browser**
-   \`\`\`
-   http://localhost:3000
-   \`\`\`
-
-## Documentation
-
-- [Setup Guide](./SETUP_GUIDE.md) - Detailed setup instructions
-- [API Reference](#api-endpoints) - API endpoint documentation
-
-## Screenshots
-
-### Login Page
-Beautiful, minimal login/signup interface
-
-### Dashboard
-Card-based bookmark grid with quick actions, search, and AI features
-
-### Add Bookmark Modal
-Easy bookmark creation with all metadata fields
-
-### AI Search
-Natural language search powered by Claude
-
-## API Endpoints
-
-### Auth
-- `POST /api/auth/register` - Create account
-- `POST /api/auth/login` - Login
-
-### Bookmarks (require auth)
-- `GET /api/bookmarks` - List all bookmarks
-- `POST /api/bookmarks` - Create bookmark
-- `PATCH /api/bookmarks/[id]` - Update bookmark
-- `DELETE /api/bookmarks/[id]` - Delete bookmark
-
-### AI
-- `POST /api/ai/search` - AI search (requires auth)
-- `POST /api/ai/summarize` - Generate summary
-
-## Environment Variables
-
-\`\`\`env
-MONGODB_URI=mongodb+srv://...
-JWT_SECRET=your-secret-key
-ANTHROPIC_API_KEY=sk-ant-...
-NEXT_PUBLIC_API_URL=http://localhost:3000
-\`\`\`
-
-See `.env.example` for details.
-
-## License
-
-MIT
-
-## Author
-
-Created with v0
+Built with **Next.js, MongoDB, and Gemini/Claude AI**, Synapse provides a clean, seamless, and intuitive experience for managing and exploring your saved web resources.
 
 ---
 
-**Synapse**: Because every bookmark is a memory worth keeping.
+## 🚀 Flow of the Application
+
+### 🟣 1. Authentication — Login & Signup
+The journey begins with a **secure login/signup system**:
+- Users can sign up with email and password.  
+- Authentication is handled using **JWT tokens** stored securely in `localStorage`.  
+- Passwords are hashed using **bcryptjs** before saving in MongoDB.  
+- **Claude API** supports secure GET and POST operations for authentication routes.
+
+Once logged in, the user is redirected to their personalized **dashboard**.
+
+---
+
+### 🟢 2. Dashboard — Clean, Minimal, and Responsive UI/UX
+After authentication, users land on a **visually clean dashboard** with:
+- A **card-based bookmark grid** (each card shows an image, title, and description).  
+- Quick actions like *Open*, *Edit*, and *Delete*.  
+- A **unified search bar** and **AI-powered search** button.  
+- Fully responsive layout with smooth animations (built using **Tailwind CSS** and **shadcn/ui**).
+
+🖼️ **Example — Dashboard**
+
+![Dashboard Screenshot](<C:\Users\91700\Desktop\appointy_task\Screenshot 2025-11-08 172847.png>)
+
+> Displays bookmarks such as:
+> - *Ikigai* → A book summary link  
+> - *Penguin* → Image from Pexels  
+> - *Oneshot* → YouTube video link
+
+---
+
+### 🔵 3. Adding Bookmarks — Your Visual Memory
+You can easily **add a new bookmark** by clicking “Add Bookmark”:
+- Provide a **URL**, **Title**, **Description**, and optional **Image URL**.  
+- Choose a **Content Type** — Article, Product, Video, Research, or Inspiration.  
+- Data is saved to MongoDB through the **Claude API (POST /api/bookmarks)** endpoint.
+
+Bookmarks are displayed instantly on the dashboard with **beautiful preview cards**.
+
+🖼️ **Example — Add/Edit Bookmark Modal**
+
+![Add Bookmark Screenshot](<C:\Users\91700\Desktop\appointy_task\Screenshot 2025-11-08 173128.pngYOUR_ADD_BOOKMARK_IMAGE_URI>)
+
+---
+
+### 🤖 4. AI-Powered Search — Powered by Gemini
+Synapse integrates **Gemini API** for **Natural Language Search** across your bookmarks.
+
+When you search using plain text (e.g., *“white”*), Gemini understands context and fetches **semantically relevant results** — even if exact matches don’t exist.
+
+🧩 **Example:**
+> Query: **white**  
+> Result: **Penguin** — because penguins are black and white, making them contextually related to the color “white”.
+
+This intelligence comes from the prompt used:
+```js
+const prompt = `You are a search assistant. 
+Given these bookmarks:\n\n${bookmarkTexts}\n\n
+Find ones relevant to the query "${query}". 
+Respond ONLY as JSON array of {id, title, reason}.`;
+````
+
+Gemini interprets this prompt and returns a contextual JSON response, which is then parsed and rendered as clean, user-friendly cards on the dashboard.
+
+🖼️ **Example — AI Search Modal**
+
+![AI Search Screenshot](<YOUR_AI_SEARCH_IMAGE_C:\Users\91700\Desktop\appointy_task\Screenshot 2025-11-08 173153.pngURI>)
+
+---
+
+### 🧩 5. Claude API Integration — Backend Intelligence
+
+While **Gemini** handles the search semantics, **Claude API** powers backend routes for:
+
+* **Authentication (Register/Login)** — secure and fast
+* **Bookmark CRUD operations** — Create, Retrieve, Update, Delete
+
+These APIs ensure data consistency, authentication validation, and structured responses.
+
+---
+
+## 🛠️ Tech Stack
+
+| Layer              | Technology                          |
+| ------------------ | ----------------------------------- |
+| **Frontend**       | React 19 + Next.js 16 (App Router)  |
+| **Backend**        | Next.js Route Handlers (API Routes) |
+| **Database**       | MongoDB                             |
+| **Authentication** | JWT + bcryptjs                      |
+| **AI Search**      | Gemini API                          |
+| **Bookmark API**   | Claude API                          |
+| **Styling**        | Tailwind CSS v4 + shadcn/ui         |
+| **Icons**          | Lucide React                        |
+
+---
+
+## ⚙️ Quick Start
+
+### 1️⃣ Clone and Install
+
+```bash
+git clone https://github.com/your-username/synapse.git
+cd synapse
+npm install
+```
+
+### 2️⃣ Setup Environment Variables
+
+```bash
+cp .env.example .env.local
+```
+
+Edit `.env.local`:
+
+```env
+MONGODB_URI=mongodb+srv://your-db-url
+JWT_SECRET=your-secret-key
+GEMINI_API_KEY=your-gemini-api-key
+CLAUDE_API_KEY=your-claude-api-key
+NEXT_PUBLIC_API_URL=http://localhost:3000
+```
+
+### 3️⃣ Run Development Server
+
+```bash
+npm run dev
+```
+
+Then open [http://localhost:3000](http://localhost:3000)
+
+---
+
+## 🧩 API Overview
+
+### 🔐 Auth
+
+* `POST /api/auth/register` → Create account
+* `POST /api/auth/login` → Login and get JWT
+
+### 🗂️ Bookmarks (Authenticated)
+
+* `GET /api/bookmarks` → List all bookmarks
+* `POST /api/bookmarks` → Add new bookmark
+* `PATCH /api/bookmarks/[id]` → Update existing
+* `DELETE /api/bookmarks/[id]` → Delete bookmark
+
+### 🤖 AI Routes
+
+* `POST /api/ai/search` → Gemini-based contextual search
+* `POST /api/ai/summarize` → AI-generated content summaries
+
+---
+
+## 🌈 Example Flow
+
+1. **Login** → Enter email & password → JWT generated
+2. **Dashboard Loads** → Fetch bookmarks from MongoDB
+3. **Add Bookmark** → Submit URL + metadata
+4. **AI Search** → Type “white” → Gemini links it to “Penguin” resource
+5. **Edit/Delete** → Update description or remove unwanted bookmarks
+
+🖼️ **Example — Login Page**
+
+![Login Screenshot](YOUR_LOGIN_IMAGE_URI)
+
+---
+
+## 📷 Screenshots
+
+| Page                | Description                                    | Example                                  |
+| ------------------- | ---------------------------------------------- | ---------------------------------------- |
+| **Login Page**      | Elegant login/signup form                      | ![Login](YOUR_LOGIN_IMAGE_URI)           |
+| **Dashboard**       | Card-based layout                              | ![Dashboard](YOUR_DASHBOARD_IMAGE_URI)   |
+| **Add/Edit Modal**  | Add or modify bookmarks easily                 | ![Add/Edit](YOUR_ADD_BOOKMARK_IMAGE_URI) |
+| **AI Search Popup** | Conversational, intelligent bookmark retrieval | ![AI Search](YOUR_AI_SEARCH_IMAGE_URI)   |
+
+---
+
+## 📘 License
+
+MIT License
+
+---
+
+## 👩‍💻 Author
+
+**Anshika M.** — Developer of *Synapse*
+
+> “Turning your scattered tabs into your visual memory of the web.”
+
+```
+
+---
+
+✅ **Instructions for you:**
+1. Copy and paste the above content directly into your VS Code file as `README.md`.  
+2. Replace each `<YOUR_IMAGE_URI>` with the **image link** you get after converting your screenshots using an image-to-URI converter (like [https://imgur.com/](https://imgur.com/) or GitHub’s drag-and-drop feature).  
+3. Commit and push — it’ll render beautifully on GitHub.
+
+Would you like me to make a **README preview version** (with your current image filenames inserted and ready to convert) so you can just replace the links later?
+```
