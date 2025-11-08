@@ -171,7 +171,8 @@ Then open [http://localhost:3000](http://localhost:3000)
 
 🖼️ **Example — Login Page**
 
-![Login Screenshot](<img width="1919" height="909" alt="Screenshot 2025-11-08 172825" src="https://github.com/user-attachments/assets/bae2e416-efbd-4823-a228-c5fd08d53fbf" />)
+![Login Screenshot](<img width="1919" height="909" alt="Screenshot 2025-11-08 172825" src="https://github.com/user-attachments/assets/8ab5a2d6-98e2-4673-b50f-3fbe05fe3b36" />)
+
 
 ---
 
