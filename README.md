@@ -176,11 +176,24 @@ Then open [http://localhost:3000](http://localhost:3000)
 
 ---
 
+## 🚀 Future Improvements & Scope
 
+Synapse already simplifies smart bookmarking, but there’s room to grow.  
+Planned enhancements include:
+
+- 🧩 **Chrome Extension:** Let users save bookmarks directly from any webpage.  
+- 🤖 **AI Categorization:** Auto-detect type, tags, and short summaries using Gemini/Claude.  
+- 💡 **Smart Recommendations:** Suggest related bookmarks using semantic similarity.  
+- 🔐 **Shared Collections:** Allow users to share bookmark sets or research groups.  
+- 🌐 **Multi-Device Sync:** Enable real-time sync and offline access.  
+
+> Goal: Turn Synapse into a complete digital memory companion — intuitive, intelligent, and seamlessly integrated across the web.
+
+---
 
 ## 👩‍💻 Author
 
-**Anshika Mishra** — Developer of *Synapse*
+**Anshika Mishra** 
 
 > “Turning your scattered tabs into your visual memory of the web.”
 
